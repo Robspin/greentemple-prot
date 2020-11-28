@@ -47,12 +47,13 @@ body {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box; }
-  .navbar:hover {
-    cursor: pointer; }
+
+.flex-container:first-child {
+  cursor: pointer; }
 
 .zen-circle {
-  height: 80px;
-  width: 80px;
+  height: 8rem;
+  width: 8rem;
   margin-right: 1rem;
   margin-top: -1rem;
   background-image: url("./images/zen-circle.png");
@@ -72,6 +73,15 @@ body {
   .link:hover {
     cursor: pointer;
     opacity: 0.7; }
+
+@media screen and (max-width: 1000px) {
+  .link {
+    display: none; }
+  .zen-circle {
+    height: 5rem;
+    width: 5rem; }
+  .title {
+    font-size: 2.5rem; } }
 
 body {
   background-image: url("./images/white-paper-bg.png");
