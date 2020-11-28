@@ -1,0 +1,25 @@
+// COLORS
+
+// Color Palette Adrift in Dreams by Skyblue2u on colourlovers.com
+
+$color-green-light: #cff09e;
+$color-green-medium: #a8dba8;
+$color-green-dark: #79bd9a;
+
+$color-blue-medium: #3b8686;
+$color-blue-dark: #0b486b;
+
+// Default colors
+
+$color-grey-light-1: #f7f7f7;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+@font-face {
+   font-family: 'japanese-brush';
+   src: url('./font/JAPAB___.TTF');
+}
+$default-font-size: 1.6rem;

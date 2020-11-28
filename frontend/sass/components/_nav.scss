@@ -1,0 +1,43 @@
+.navbar {
+   font-family: 'japanese-brush';
+   color: $color-black;
+   font-size: 2rem;
+   margin-top: 1rem;
+   height: 12vh;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   box-sizing: border-box;
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+.zen-circle {
+   height: 80px;
+   width: 80px;
+   margin-right: 1rem;
+   margin-top: -1rem;
+   background-image: url('./images/zen-circle.png');
+   background-size: cover;
+   animation: logo-spin infinite 20s linear;
+   animation-play-state: paused;
+}
+
+.flex-container {
+   display: flex;
+   align-items: center;
+}
+
+.spinning:hover .zen-circle {
+   animation-play-state: running;
+}
+
+.link {
+   margin-right: 3.5rem;
+   &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+   }
+}

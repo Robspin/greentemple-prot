@@ -1,12 +1,15 @@
 import React from 'react';
-import TradingViewWidget, { Themes } from 'react-tradingview-widget';
+
+import Nav from './components/Nav';
+import TradingViewChart from './components/TradingViewChart';
 
 const App = () => (
-   <TradingViewWidget
-      symbol='COINBASE:BTCUSD'
-      theme={Themes.DARK}
-      locale='fr'
-   />
+   <div>
+      <Nav />
+      <div className='app-body'>
+         <TradingViewChart />
+      </div>
+   </div>
 );
 
 export default App;
