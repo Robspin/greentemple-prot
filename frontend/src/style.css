@@ -22,19 +22,24 @@ body {
     transform: rotate(-360deg); } }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
   padding: 0 3rem; }
 
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 0 1.2rem; } }
+
 .app-body {
   height: 85vh;
-  width: 96vw;
+  width: 100%;
   background-image: url("./images/white-paper-bg.png");
   box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  padding: 2rem; }
 
 .navbar {
   font-family: 'japanese-brush';
@@ -69,6 +74,8 @@ body {
   animation-play-state: running; }
 
 .link {
+  box-sizing: border-box;
+  position: relative;
   margin-right: 3.5rem; }
   .link:hover {
     cursor: pointer;
@@ -82,6 +89,17 @@ body {
     width: 5rem; }
   .title {
     font-size: 2.5rem; } }
+
+.current {
+  width: 5rem;
+  height: 2rem;
+  background-image: url("./images/brush-stroke.png");
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  margin-left: -3rem;
+  margin-top: -0.7rem;
+  z-index: 10; }
 
 body {
   background-image: url("./images/white-paper-bg.png");

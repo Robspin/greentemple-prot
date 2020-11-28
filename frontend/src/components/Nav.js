@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Nav = () => {
+const Nav = ({ page, setPage }) => {
    const [spinning, setSpinning] = useState('home flex-container');
 
    return (
@@ -15,9 +15,18 @@ const Nav = () => {
                <h2 className='title'>GreenTemple</h2>
             </div>
             <div className='flex-container'>
-               <h2 className='link'>blog</h2>
-               <h2 className='link'>stats</h2>
-               <h2 className='link'>login</h2>
+               <h2 className='link' onClick={() => setPage('blog')}>
+                  blog{' '}
+                  <div className={page === 'blog' ? 'current' : undefined} />
+               </h2>
+               <h2 className='link' onClick={() => setPage('stats')}>
+                  stats{' '}
+                  <div className={page === 'stats' ? 'current' : undefined} />
+               </h2>
+               <h2 className='link' onClick={() => setPage('login')}>
+                  login{' '}
+                  <div className={page === 'login' ? 'current' : undefined} />
+               </h2>
             </div>
          </div>
       </div>

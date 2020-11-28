@@ -1,8 +1,14 @@
 body {
-   font-family: 'Lato', sans-serif;
+   font-family: 'Montserrat', sans-serif;
    font-weight: 400;
    /* font-size: 16px; */
    line-height: 1.7;
    color: $color-grey-dark;
    padding: 0 3rem;
+}
+
+@media screen and (max-width: 1000px) {
+   body {
+      padding: 0 1.2rem;
+   }
 }
