@@ -10,6 +10,7 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 
+// redirect http => https middleware
 if (process.env.NODE_ENV === 'production') {
    app.use((req, res, next) => {
       if (req.header('x-forwarded-proto') !== 'https')
