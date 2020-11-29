@@ -4,13 +4,13 @@ import Nav from './components/Nav';
 import TradingViewChart from './components/TradingViewChart';
 
 const App = () => {
-   const [page, setPage] = useState('home');
+   const [page, setPage] = useState('chart');
 
    return (
       <div>
          <Nav setPage={setPage} page={page} />
          <div className='app-body'>
-            <TradingViewChart />
+            {page === 'chart' ? <TradingViewChart /> : undefined}
          </div>
       </div>
    );

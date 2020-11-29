@@ -21,6 +21,12 @@ body {
   to {
     transform: rotate(-360deg); } }
 
+@keyframes brush {
+  from {
+    transform: scaleX(0.1) translateX(-2.5rem); }
+  to {
+    transform: scaleX(5rem) translateX(0); } }
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -68,7 +74,8 @@ body {
 
 .flex-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  z-index: 3; }
 
 .spinning:hover .zen-circle {
   animation-play-state: running; }
@@ -79,16 +86,7 @@ body {
   margin-right: 3.5rem; }
   .link:hover {
     cursor: pointer;
-    opacity: 0.7; }
-
-@media screen and (max-width: 1000px) {
-  .link {
-    display: none; }
-  .zen-circle {
-    height: 5rem;
-    width: 5rem; }
-  .title {
-    font-size: 2.5rem; } }
+    opacity: 0.8; }
 
 .current {
   width: 5rem;
@@ -99,7 +97,80 @@ body {
   left: 50%;
   margin-left: -3rem;
   margin-top: -0.7rem;
-  z-index: 10; }
+  z-index: 10;
+  animation: brush 0.2s ease-in; }
+
+.menu-btn {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease-out; }
+
+.menu-btn .btn-line {
+  width: 50px;
+  height: 12px;
+  margin: 0 0 5px 0;
+  background-image: url("./images/brush-stroke.png");
+  background-size: cover;
+  transition: all 0.4s ease-out; }
+
+.menu-btn.close {
+  transform: rotate(180deg); }
+
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(16px, 15px);
+  width: 50px; }
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0; }
+
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+  width: 50px; }
+
+.mobile-modal {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'japanese-brush';
+  font-size: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-image: url("./images/white-paper-bg.png"); }
+
+.link-modal {
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  color: #000; }
+  .link-modal:hover {
+    cursor: pointer;
+    opacity: 0.8; }
+
+.hide {
+  display: none; }
+
+@media screen and (max-width: 1000px) {
+  .mobile-modal {
+    display: flex; }
+  .menu-btn {
+    display: inline-block; }
+  .link {
+    display: none; }
+  .zen-circle {
+    height: 5rem;
+    width: 5rem; }
+  .title {
+    font-size: 2.5rem; } }
 
 body {
   background-image: url("./images/white-paper-bg.png");

@@ -6,3 +6,12 @@
       transform: rotate(-360deg);
    }
 }
+
+@keyframes brush {
+   from {
+      transform: scaleX(0.1) translateX(-2.5rem);
+   }
+   to {
+      transform: scaleX(5rem) translateX(0);
+   }
+}
