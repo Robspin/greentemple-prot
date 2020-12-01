@@ -105,7 +105,7 @@ body {
   position: absolute;
   z-index: 3;
   right: 20px;
-  top: 32px;
+  top: 27px;
   cursor: pointer;
   transition: all 0.4s ease-out; }
 
@@ -190,6 +190,7 @@ body {
   .link {
     display: none; }
   .zen-circle {
+    margin-top: -1.5rem;
     height: 5rem;
     width: 5rem; }
   .title {
