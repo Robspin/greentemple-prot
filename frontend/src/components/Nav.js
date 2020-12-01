@@ -47,7 +47,11 @@ const Nav = ({ page, setPage }) => {
             </div>
          </div>
          <div
-            className={menuBtn === 'menu-btn close' ? 'mobile-modal' : 'hide'}
+            className={
+               menuBtn === 'menu-btn close'
+                  ? 'mobile-modal show'
+                  : 'mobile-modal'
+            }
          >
             <h2
                className='link-modal'
