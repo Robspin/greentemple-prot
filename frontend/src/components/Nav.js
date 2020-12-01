@@ -13,7 +13,10 @@ const Nav = ({ page, setPage }) => {
                onMouseLeave={() => setSpinning('home flex-container')}
             >
                <div className='zen-circle'></div>
-               <h2 className='title'>GreenTemple</h2>
+               <div className='test'>
+                  <h2 className='title'>GreenTemple</h2>
+                  <div className='paint-bg'></div>
+               </div>
             </div>
             <div className='flex-container'>
                <h2 className='link' onClick={() => setPage('blog')}>

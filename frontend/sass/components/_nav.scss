@@ -49,7 +49,7 @@
 .current {
    width: 5rem;
    height: 2rem;
-   background-image: url('./images/brush-stroke.png');
+   background-image: url('./images/brush-stroke-g.png');
    background-size: cover;
    position: absolute;
    left: 50%;
@@ -63,8 +63,8 @@
    display: none;
    position: absolute;
    z-index: 3;
-   right: 30px;
-   top: 30px;
+   right: 20px;
+   top: 32px;
    cursor: pointer;
    transition: all 0.4s ease-out;
 }
@@ -124,6 +124,32 @@
    display: none;
 }
 
+.test {
+   position: relative;
+   height: 50px;
+   width: 250px;
+}
+
+.title {
+   z-index: 10;
+   position: absolute;
+   height: 50px;
+   width: 250px;
+   top: 0;
+   left: 0;
+}
+
+.paint-bg {
+   position: absolute;
+   height: 70px;
+   width: 250px;
+   background-image: url('./images/big-brush-g.png');
+   background-size: cover;
+   top: -10px;
+   left: 0;
+   z-index: 0;
+}
+
 @media screen and (max-width: 1000px) {
    .mobile-modal {
       display: flex;
@@ -140,5 +166,9 @@
    }
    .title {
       font-size: 2.5rem;
+   }
+   .paint-bg {
+      height: 50px;
+      width: 200px;
    }
 }
