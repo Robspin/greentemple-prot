@@ -52,6 +52,7 @@ body {
   color: #000;
   font-size: 2rem;
   margin-top: 1rem;
+  min-height: 80px;
   height: 12vh;
   width: 100%;
   display: flex;
