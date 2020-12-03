@@ -11,9 +11,10 @@ html {
 }
 
 body {
-   box-sizing: border-box;
+   overflow-x: hidden;
 }
 
-.overflow-wrapper {
-   overflow-x: hidden;
+body {
+   box-sizing: border-box;
+   padding: 0 3rem 0 3rem;
 }

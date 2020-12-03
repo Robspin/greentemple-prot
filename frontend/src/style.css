@@ -13,8 +13,11 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box;
   overflow-x: hidden; }
+
+body {
+  box-sizing: border-box;
+  padding: 0 3rem 0 3rem; }
 
 @keyframes logo-spin {
   from {
@@ -33,15 +36,14 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
-  padding: 0 3rem; }
+  color: #777; }
 
 @media screen and (max-width: 1000px) {
-  body {
-    padding: 0 1.2rem; } }
+  .body {
+    padding: 0 1.2rem 0 1.2rem; } }
 
 .app-body {
-  height: 85vh;
+  height: 83vh;
   width: 100%;
   background-image: url("./images/white-paper-bg.png");
   box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
@@ -106,7 +108,7 @@ body {
   display: none;
   position: absolute;
   z-index: 3;
-  right: 20px;
+  right: 32px;
   top: 27px;
   cursor: pointer;
   transition: all 0.4s ease-out; }
