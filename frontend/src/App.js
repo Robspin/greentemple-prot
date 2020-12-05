@@ -9,10 +9,9 @@ const App = () => {
 
    return (
       <div>
-         <Nav setPage={setPage} page={page} />
+         <Header setPage={setPage} page={page} />
          <div className='app-body'>
             {page === 'chart' ? <TradingViewChart /> : undefined}
-            {page === 'blog' ? <Header /> : undefined}
          </div>
       </div>
    );

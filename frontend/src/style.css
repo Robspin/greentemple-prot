@@ -14,7 +14,12 @@ html {
 
 body {
   box-sizing: border-box;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  padding: 0 3rem; }
+
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 0 1.2rem; } }
 
 @keyframes logo-spin {
   from {
@@ -38,24 +43,28 @@ body {
 .app-body {
   height: 85vh;
   width: 100%;
-  background-image: url("./images/white-paper-bg.png");
   box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 1rem 0 rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
+  background-image: linear-gradient(to right bottom, #3b8686, #0b486b);
   padding: 2rem; }
 
 .navbar {
-  font-family: 'japanese-brush';
-  color: #000;
-  font-size: 2rem;
-  min-height: 80px;
-  height: 12vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin: 0 3rem 1rem 3rem;
-  padding-right: 3rem; }
+  position: absolute;
+  padding: 2rem 7rem 0 5rem;
+  width: 100%; }
+  .navbar__box {
+    font-family: 'japanese-brush';
+    padding-bottom: 2rem;
+    color: #f7f7f7;
+    font-size: 2rem;
+    min-height: 80px;
+    font-weight: normal;
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(247, 247, 247, 0.2); }
 
 .flex-container:first-child {
   cursor: pointer; }
@@ -64,7 +73,7 @@ body {
   height: 8rem;
   width: 8rem;
   margin-right: 1rem;
-  background-image: url("./images/zen-circle.png");
+  background-image: url("./images/circle-g.png");
   background-size: cover;
   animation: logo-spin infinite 20s linear;
   animation-play-state: paused; }
@@ -81,7 +90,8 @@ body {
 .link {
   box-sizing: border-box;
   position: relative;
-  margin-right: 3.5rem; }
+  margin-right: 3.5rem;
+  font-weight: normal; }
   .link:hover {
     cursor: pointer;
     opacity: 0.8; }
@@ -102,8 +112,8 @@ body {
   display: none;
   position: absolute;
   z-index: 3;
-  right: 20px;
-  top: 27px;
+  right: 23px;
+  top: 18px;
   cursor: pointer;
   transition: all 0.4s ease-out; }
 
@@ -111,7 +121,7 @@ body {
   width: 50px;
   height: 12px;
   margin: 0 0 5px 0;
-  background-image: url("./images/brush-stroke.png");
+  background-image: url("./images/brush-stroke-w.png");
   background-size: cover;
   transition: all 0.4s ease-out; }
 
@@ -132,18 +142,19 @@ body {
 .mobile-modal {
   display: none;
   position: absolute;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 30rem;
   align-items: center;
   flex-direction: column;
   font-family: 'japanese-brush';
   font-size: 2rem;
-  top: 0;
-  left: 0;
+  top: -1rem;
+  left: -3rem;
   transform: translateX(100%);
-  height: 100vh;
+  height: 135vh;
   width: 100vw;
   z-index: 2;
-  background-image: url("./images/white-paper-bg.png");
+  background-image: linear-gradient(to right bottom, #3b8686, #0b486b);
   transition: all ease-in 0.3s; }
 
 .show {
@@ -152,7 +163,8 @@ body {
 .link-modal {
   box-sizing: border-box;
   margin-bottom: 1rem;
-  color: #000; }
+  color: #f7f7f7;
+  font-weight: normal; }
   .link-modal:hover {
     cursor: pointer;
     opacity: 0.8; }
@@ -163,6 +175,7 @@ body {
   width: 250px; }
 
 .title {
+  font-weight: normal;
   z-index: 10;
   position: absolute;
   height: 50px;
@@ -170,20 +183,14 @@ body {
   top: 0;
   left: 0; }
 
-.paint-bg {
-  position: absolute;
-  height: 70px;
-  width: 250px;
-  background-image: url("./images/big-brush-g.png");
-  background-size: cover;
-  top: -10px;
-  left: 0;
-  z-index: 0; }
-
 @media screen and (max-width: 1000px) {
   .navbar {
     padding: 0;
     margin: 1rem 1rem 0 1.4rem; }
+    .navbar__box {
+      padding-bottom: 0; }
+  .flex-container {
+    padding-top: 0; }
   .mobile-modal {
     display: flex; }
   .menu-btn {
@@ -202,16 +209,16 @@ body {
 
 .header {
   position: relative;
-  height: 35vh;
-  width: calc(100% + 4rem);
-  background-image: linear-gradient(to right bottom, rgba(59, 134, 134, 0.7), rgba(11, 72, 107, 0.7)), url("./images/temple.jpg");
+  height: 45vh;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 20%, rgba(11, 72, 107, 0.75) 55%, rgba(0, 0, 0, 0.85) 88%), url("./images/temple.jpg");
   background-size: cover;
   background-position: center;
-  margin: -2rem -2rem 0 -2rem; }
+  z-index: 3; }
   .header__text-box {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -237,7 +244,3 @@ body {
     .header__title-secondary {
       font-size: 1.4rem;
       letter-spacing: 2px; } }
-
-body {
-  background-image: url("./images/white-paper-bg.png");
-  background-size: cover; }

@@ -5,8 +5,8 @@ const Nav = ({ page, setPage }) => {
    const [menuBtn, setMenuBtn] = useState('menu-btn');
 
    return (
-      <div>
-         <div className='navbar'>
+      <div className='navbar'>
+         <div className='navbar__box'>
             <div
                className={spinning}
                onMouseEnter={() => setSpinning('home flex-container spinning')}
