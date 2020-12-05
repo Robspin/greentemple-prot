@@ -14,7 +14,7 @@ html {
 
 body {
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 0 3rem; }
 
 @media screen and (max-width: 1000px) {
