@@ -33,12 +33,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
-  padding: 0 3rem; }
-
-@media screen and (max-width: 1000px) {
-  body {
-    padding: 0 1.2rem; } }
+  color: #777; }
 
 .app-body {
   height: 85vh;
@@ -52,14 +47,15 @@ body {
   font-family: 'japanese-brush';
   color: #000;
   font-size: 2rem;
-  margin-top: 1rem;
   min-height: 80px;
   height: 12vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0 3rem 1rem 3rem;
+  padding-right: 3rem; }
 
 .flex-container:first-child {
   cursor: pointer; }
@@ -68,13 +64,13 @@ body {
   height: 8rem;
   width: 8rem;
   margin-right: 1rem;
-  margin-top: -1rem;
   background-image: url("./images/zen-circle.png");
   background-size: cover;
   animation: logo-spin infinite 20s linear;
   animation-play-state: paused; }
 
 .flex-container {
+  padding-top: 1rem;
   display: flex;
   align-items: center;
   z-index: 3; }
@@ -185,6 +181,9 @@ body {
   z-index: 0; }
 
 @media screen and (max-width: 1000px) {
+  .navbar {
+    padding: 0;
+    margin: 1rem 1rem 0 1.4rem; }
   .mobile-modal {
     display: flex; }
   .menu-btn {
@@ -203,17 +202,16 @@ body {
 
 .header {
   position: relative;
-  height: 40vh;
+  height: 35vh;
   width: calc(100% + 4rem);
   background-image: linear-gradient(to right bottom, rgba(59, 134, 134, 0.7), rgba(11, 72, 107, 0.7)), url("./images/temple.jpg");
   background-size: cover;
   background-position: center;
-  margin: -2rem -2rem 0 -2rem;
-  border-radius: 5px 5px 0 0; }
+  margin: -2rem -2rem 0 -2rem; }
   .header__text-box {
     width: 100%;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
