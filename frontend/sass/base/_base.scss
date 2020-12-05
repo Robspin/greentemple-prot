@@ -12,12 +12,12 @@ html {
 
 body {
    box-sizing: border-box;
-   overflow-x: hidden;
+   overflow: hidden;
    padding: 0 3rem;
 }
 
 @media screen and (max-width: 1000px) {
    body {
-      padding: 0 1.2rem;
+      padding: 0 1rem;
    }
 }
