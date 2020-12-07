@@ -2,7 +2,7 @@ const cron = require('node-cron');
 const shell = require('shelljs');
 
 cron.schedule(
-   '53 11 * * *',
+   '10 12 * * *',
    () => {
       console.log('Scheduler running...');
       if (shell.exec('node prices.js').code !== 0) {
