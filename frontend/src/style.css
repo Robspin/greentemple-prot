@@ -15,11 +15,11 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden;
-  padding: 0 3rem; }
+  padding: 0; }
 
 @media screen and (max-width: 1000px) {
   body {
-    padding: 0 1rem; } }
+    padding: 0; } }
 
 @keyframes logo-spin {
   from {
