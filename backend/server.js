@@ -13,7 +13,7 @@ app.use(express.json());
 const __dirname = path.resolve();
 
 cron.schedule(
-   '* 11 * * *',
+   '00 11 * * *',
    () => {
       console.log('Scheduler running...');
       getPrices();
