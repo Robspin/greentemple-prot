@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Nav from './components/Nav';
 import TradingViewChart from './components/TradingViewChart';
 import Header from './components/Header';
+import Stats from './components/Stats';
 
 const App = () => {
-   const [page, setPage] = useState('blog');
-
    return (
-      <div>
-         <Header setPage={setPage} page={page} />
+      <Router>
+         <Header />
          <div className='app-body'>
-            {page === 'chart' ? <TradingViewChart /> : undefined}
+            <Route path='/' component={Stats} exact />
+            <Route path='/chart' component={TradingViewChart} />
          </div>
-      </div>
+      </Router>
    );
 };
 

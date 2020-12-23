@@ -2,9 +2,14 @@ import cron from 'node-cron';
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
-import getPrices from './prices.js';
+
+import pricesCall from './pricesCall.js';
+import connectDB from './config/db.js';
+import pricesRoutes from './routes/pricesRoutes.js';
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 
@@ -16,7 +21,7 @@ cron.schedule(
    '00 11 * * *',
    () => {
       console.log('Scheduler running...');
-      getPrices();
+      pricesCall();
    },
    {
       timezone: 'Europe/Amsterdam'
@@ -35,6 +40,8 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/api', (req, res) => {
    res.send('API is running...');
 });
+
+app.use('/api/prices', pricesRoutes);
 
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 

@@ -1,13 +1,15 @@
-import * as fs from 'fs';
 import nodemailer from 'nodemailer';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
+import Prices from './models/pricesModel.js';
+
 let prices = [];
 
-fs.readFile('./backend/prices.json', 'utf8', function (err, contents) {
-   prices = JSON.parse(contents);
-});
+(async function getAllPrices() {
+   const data = await Prices.find({});
+   prices = data;
+})();
 
 dotenv.config();
 
@@ -16,7 +18,7 @@ const metalsKey = process.env.METALS_KEY;
 let fetchedMetals;
 
 // Only 50 calls a month!
-export default function getPrices() {
+export default function pricesCall() {
    const currentDate = new Date().toLocaleString('en-GB', {
       timeZone: 'Europe/Amsterdam'
    });
@@ -35,15 +37,21 @@ export default function getPrices() {
                   XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100
                });
 
-               fs.writeFile(
-                  './backend/prices.json',
-                  `${JSON.stringify(prices)}`,
-                  err => {
-                     if (err) return console.log(err);
-                  }
-               );
+               // @desc    Insert prices in database
+               // @access  Backend only
+               const postIt = async () => {
+                  const prices = new Prices({
+                     date: currentDate,
+                     BTC: Math.round(response.data[11].price * 100) / 100,
+                     XAU: 27,
+                     XAG: 1890
+                  });
+
+                  const insertedPrices = await prices.save();
+               };
+               postIt();
             })
-            .then(setTimeout(() => readPrice(), 5000));
+            .then(setTimeout(() => sendMail(), 5000));
       });
 
    const mailAdress = process.env.MAIL_ADDRESS;
@@ -63,17 +71,19 @@ export default function getPrices() {
          to: 'robin_steeman@hotmail.com',
          subject: `Daily Report ${currentDate}`,
          html: `<h2>Today's Data:</h2> 
-         <h3>Today:</h3>
-      <ul><li>BITCOIN:  ${JSON.stringify(prices[prices.length - 1]['BTC'])}</li>
+            <h3>Today:</h3>
+            <ul><li>BITCOIN:  ${JSON.stringify(
+               prices[prices.length - 1]['BTC']
+            )}</li>
       <li>GOLD:  ${JSON.stringify(prices[prices.length - 1]['XAU'])}</li>
       <li>SILVER:  ${JSON.stringify(prices[prices.length - 1]['XAG'])}</li>
       <br>
       <h3>All:</h3>
       <p>${JSON.stringify(prices)}</p>
-      `,
-         attachments: [
-            { filename: 'prices.json', path: './backend/prices.json' }
-         ]
+      `
+         // attachments: [
+         //    { filename: 'prices.json', path: './backend/prices.json' }
+         // ]
       };
 
       transporter.sendMail(mailOptions, (err, info) => {
@@ -85,15 +95,15 @@ export default function getPrices() {
       });
    };
 
-   const readPrice = async () => {
-      return fs.readFile(
-         './backend/prices.json',
-         'utf8',
-         function (err, contents) {
-            // console.log(JSON.parse(contents));
-            prices = JSON.parse(contents);
-            sendMail();
-         }
-      );
-   };
+   // const readPrice = async () => {
+   //    return fs.readFile(
+   //       './backend/prices.json',
+   //       'utf8',
+   //       function (err, contents) {
+   //          // console.log(JSON.parse(contents));
+   //          prices = JSON.parse(contents);
+   //          sendMail();
+   //       }
+   //    );
+   // };
 }

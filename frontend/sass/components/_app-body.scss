@@ -1,5 +1,5 @@
 .app-body {
-   height: 85vh;
+   height: 100%;
    width: 100%;
    box-shadow: 0 0.4rem 0.8rem 0 rgba($color-black, 0.2),
       0 0.6rem 1rem 0 rgba($color-black, 0.1);
@@ -9,4 +9,8 @@
       rgba($color-blue-dark, 1)
    );
    padding: 2rem;
+}
+
+.chart-wrapper {
+   height: 100vh;
 }

@@ -3,11 +3,13 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 
 const TradingViewChart = () => {
    return (
-      <TradingViewWidget
-         symbol='COINBASE:BTCUSD'
-         theme={Themes.DARK}
-         autosize
-      />
+      <div className='chart-wrapper'>
+         <TradingViewWidget
+            symbol='COINBASE:BTCUSD'
+            theme={Themes.DARK}
+            autosize
+         />
+      </div>
    );
 };
 

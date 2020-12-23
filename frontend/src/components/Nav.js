@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Nav = ({ page, setPage }) => {
+const Nav = () => {
+   const [page, setPage] = useState('stats');
    const [spinning, setSpinning] = useState('home flex-container');
    const [menuBtn, setMenuBtn] = useState('menu-btn');
 
@@ -19,18 +21,26 @@ const Nav = ({ page, setPage }) => {
                </div>
             </div>
             <div className='flex-container'>
-               <h2 className='link' onClick={() => setPage('blog')}>
-                  blog{' '}
-                  <div className={page === 'blog' ? 'current' : undefined} />
-               </h2>
-               <h2 className='link' onClick={() => setPage('chart')}>
+               <Link className='link' onClick={() => setPage('stats')} to='/'>
+                  stats{' '}
+                  <div className={page === 'stats' ? 'current' : undefined} />
+               </Link>
+               <Link
+                  className='link'
+                  onClick={() => setPage('chart')}
+                  to='/chart'
+               >
                   chart{' '}
                   <div className={page === 'chart' ? 'current' : undefined} />
-               </h2>
-               <h2 className='link' onClick={() => setPage('login')}>
+               </Link>
+               <Link
+                  className='link'
+                  onClick={() => setPage('login')}
+                  to='/login'
+               >
                   login{' '}
                   <div className={page === 'login' ? 'current' : undefined} />
-               </h2>
+               </Link>
             </div>
 
             <div
@@ -53,35 +63,39 @@ const Nav = ({ page, setPage }) => {
                   : 'mobile-modal'
             }
          >
-            <h2
+            <Link
                className='link-modal'
                onClick={() => {
                   setMenuBtn('menu-btn');
-                  setPage('blog');
+                  setPage('stats');
                }}
+               to='/'
             >
-               blog <div className={page === 'blog' ? 'current' : undefined} />
-            </h2>
-            <h2
+               stats{' '}
+               <div className={page === 'stats' ? 'current' : undefined} />
+            </Link>
+            <Link
                className='link-modal'
                onClick={() => {
                   setMenuBtn('menu-btn');
                   setPage('chart');
                }}
+               to='/chart'
             >
                chart{' '}
                <div className={page === 'chart' ? 'current' : undefined} />
-            </h2>
-            <h2
+            </Link>
+            <Link
                className='link-modal'
                onClick={() => {
                   setMenuBtn('menu-btn');
                   setPage('login');
                }}
+               to='/login'
             >
                login{' '}
                <div className={page === 'login' ? 'current' : undefined} />
-            </h2>
+            </Link>
          </div>
       </div>
    );
