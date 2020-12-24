@@ -9,6 +9,7 @@ let prices = [];
 (async function getAllPrices() {
    const data = await Prices.find({});
    prices = data;
+   console.log(`prices: ${prices[prices.length - 1]['XAG']}`);
 })();
 
 dotenv.config();
