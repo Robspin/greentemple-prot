@@ -43,8 +43,8 @@ export default function pricesCall() {
                   const prices = new Prices({
                      date: currentDate,
                      BTC: Math.round(response.data[11].price * 100) / 100,
-                     XAU: 27,
-                     XAG: 1890
+                     XAU: Math.round((1 / fetchedMetals.rates.XAG) * 100) / 100,
+                     XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100
                   });
 
                   const insertedPrices = await prices.save();
