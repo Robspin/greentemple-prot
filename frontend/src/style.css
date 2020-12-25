@@ -62,7 +62,7 @@ body {
     font-size: 2rem;
     min-height: 80px;
     font-weight: normal;
-    height: 12vh;
+    height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -74,9 +74,9 @@ body {
   cursor: pointer; }
 
 .zen-circle {
-  height: 8rem;
-  width: 8rem;
-  margin-right: 1rem;
+  height: 6rem;
+  width: 6rem;
+  margin-right: 2rem;
   background-image: url("./images/circle-g.png");
   background-size: cover;
   animation: logo-spin infinite 20s linear;
@@ -155,8 +155,8 @@ body {
   flex-direction: column;
   font-family: 'japanese-brush';
   font-size: 2rem;
-  top: -1rem;
-  left: -1.37rem;
+  top: 0;
+  left: 0;
   bottom: 0;
   transform: translateX(100%);
   width: 100vw;
@@ -220,7 +220,7 @@ body {
 
 .header {
   position: relative;
-  height: 45vh;
+  height: 40vh;
   width: 100%;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 20%, rgba(11, 72, 107, 0.75) 55%, rgba(0, 0, 0, 0.85) 88%), url("./images/temple.jpg");
   background-size: cover;
