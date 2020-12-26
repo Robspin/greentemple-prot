@@ -35,11 +35,11 @@ const Nav = () => {
                </Link>
                <Link
                   className='link'
-                  onClick={() => setPage('login')}
-                  to='/login'
+                  onClick={() => setPage('blog')}
+                  to='/blog'
                >
-                  login{' '}
-                  <div className={page === 'login' ? 'current' : undefined} />
+                  blog{' '}
+                  <div className={page === 'blog' ? 'current' : undefined} />
                </Link>
             </div>
 
@@ -89,12 +89,11 @@ const Nav = () => {
                className='link-modal'
                onClick={() => {
                   setMenuBtn('menu-btn');
-                  setPage('login');
+                  setPage('blog');
                }}
-               to='/login'
+               to='/blog'
             >
-               login{' '}
-               <div className={page === 'login' ? 'current' : undefined} />
+               blog <div className={page === 'blog' ? 'current' : undefined} />
             </Link>
          </div>
       </div>

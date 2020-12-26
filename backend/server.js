@@ -2,6 +2,7 @@ import cron from 'node-cron';
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import pricesCall from './pricesCall.js';
 import connectDB from './config/db.js';
@@ -13,6 +14,8 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 
 const __dirname = path.resolve();
@@ -38,6 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/api', (req, res) => {
+   res.header('Access-Control-Allow-Credentials', true);
    res.send('API is running...');
 });
 
