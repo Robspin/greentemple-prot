@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ import Stats from './components/Stats';
 import Blog from './components/Blog';
 
 const App = () => {
-   const [priceData, setPriceData] = useState(null);
+   const [priceData, setPriceData] = useState({});
 
    let currentPrices;
 
@@ -33,7 +33,7 @@ const App = () => {
 
    return (
       <Router>
-         <PriceContext.Provider value={priceData}>
+         <PriceContext.Provider value={(priceData, setPriceData)}>
             <Header />
             <div className='app-body'>
                <Route path='/' component={Stats} exact />
