@@ -9,7 +9,7 @@ let prices = [];
 (async function getAllPrices() {
    const data = await Prices.find({});
    prices = data;
-   console.log(`prices: ${prices[prices.length - 1]['XAG']}`);
+   // console.log(`prices: ${prices[prices.length - 1]['XAG']}`);
 })();
 
 dotenv.config();
@@ -34,21 +34,26 @@ export default function pricesCall() {
                prices.push({
                   date: currentDate,
                   BTC: Math.round(response.data[11].price * 100) / 100,
-                  XAG: 24,
-                  XAU: 1800
+                  XAG: 25,
+                  XAU: 1800,
+                  portfolio:
+                     0.44 * 1800 +
+                     25 * 97 +
+                     0.25 * (Math.round(response.data[11].price * 100) / 100)
                });
 
                // @desc    Insert prices in database
                // @access  Backend only
                const postIt = async () => {
-                  const prices = new Prices({
+                  const insertPrices = new Prices({
                      date: currentDate,
                      BTC: Math.round(response.data[11].price * 100) / 100,
-                     XAU: 27,
-                     XAG: 1890
+                     XAU: prices[prices.length - 1]['XAU'],
+                     XAG: prices[prices.length - 1]['XAG'],
+                     portfolio: prices[prices.length - 1]['portfolio']
                   });
 
-                  const insertedPrices = await prices.save();
+                  const insertedPrices = await insertPrices.save();
                };
                postIt();
             })

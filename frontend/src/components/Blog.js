@@ -226,12 +226,12 @@ const tickerConfig = {
 
 const Blog = () => {
    return (
-      <div className='stats'>
+      <div className='blog'>
          <Widget
             url={'external-embedding/embed-widget-tickers.js'}
             config={tickerConfig}
          />
-         <div className='stats__grid-container'>
+         <div className='blog__grid-container'>
             <Widget
                url={'external-embedding/embed-widget-mini-symbol-overview.js'}
                config={smallChartConfig('COINBASE:BTCUSD')}

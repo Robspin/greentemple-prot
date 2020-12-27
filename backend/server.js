@@ -4,7 +4,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import pricesCall from './pricesCall.js';
+import pricesCall from './pricesTest.js';
 import connectDB from './config/db.js';
 import pricesRoutes from './routes/pricesRoutes.js';
 
@@ -41,7 +41,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/api', (req, res) => {
-   res.header('Access-Control-Allow-Credentials', true);
    res.send('API is running...');
 });
 

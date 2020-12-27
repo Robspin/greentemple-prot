@@ -11,13 +11,24 @@ import Blog from './components/Blog';
 const App = () => {
    const [priceData, setPriceData] = useState(null);
 
+   let currentPrices;
+
    useEffect(() => {
       axios
-         .get('http://localhost:5000/api/prices')
-         .then(data => {
-            console.log(data);
+         .get('https://greentemple.io/api/prices')
+         .then(res => {
+            console.log(res.data[res.data.length - 1]);
+            currentPrices = res.data[res.data.length - 1];
+            setPriceData({
+               priceData: res.data,
+               currentPortfolio:
+                  0.44 * currentPrices['XAU'] +
+                  97 * currentPrices['XAG'] +
+                  0.24 * currentPrices['BTC']
+            });
          })
          .catch(err => console.log(err));
+      console.log(priceData);
    }, []);
 
    return (

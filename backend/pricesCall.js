@@ -34,7 +34,15 @@ export default function pricesCall() {
                   date: currentDate,
                   BTC: Math.round(response.data[11].price * 100) / 100,
                   XAG: Math.round((1 / fetchedMetals.rates.XAG) * 100) / 100,
-                  XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100
+                  XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100,
+                  portfolio:
+                     0.44 *
+                        (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
+                           100) +
+                     97 *
+                        (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
+                           100) +
+                     0.25 * (Math.round(response.data[11].price * 100) / 100)
                });
 
                // @desc    Insert prices in database
@@ -44,7 +52,8 @@ export default function pricesCall() {
                      date: currentDate,
                      BTC: Math.round(response.data[11].price * 100) / 100,
                      XAU: prices[prices.length - 1]['XAU'],
-                     XAG: prices[prices.length - 1]['XAG']
+                     XAG: prices[prices.length - 1]['XAG'],
+                     portfolio: prices[prices.length - 1]['portfolio']
                   });
 
                   const insertedPrices = await insertPrices.save();
