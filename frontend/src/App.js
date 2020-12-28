@@ -9,31 +9,31 @@ import Stats from './components/Stats';
 import Blog from './components/Blog';
 
 const App = () => {
-   const [priceData, setPriceData] = useState({});
-
-   let currentPrices;
+   const [priceData, setPriceData] = useState({
+      latestPriceData: {
+         BTC: 3,
+         XAG: 3,
+         XAU: 3,
+         date: '12/28/2020, 10:00:00 AM',
+         portfolio: 10000
+      }
+   });
 
    useEffect(() => {
       axios
          .get('https://greentemple.io/api/prices')
          .then(res => {
-            console.log(res.data[res.data.length - 1]);
-            currentPrices = res.data[res.data.length - 1];
             setPriceData({
                priceData: res.data,
-               currentPortfolio:
-                  0.44 * currentPrices['XAU'] +
-                  97 * currentPrices['XAG'] +
-                  0.24 * currentPrices['BTC']
+               latestPriceData: res.data[res.data.length - 1]
             });
          })
          .catch(err => console.log(err));
-      console.log(priceData);
    }, []);
 
    return (
       <Router>
-         <PriceContext.Provider value={(priceData, setPriceData)}>
+         <PriceContext.Provider value={{ priceData, setPriceData }}>
             <Header />
             <div className='app-body'>
                <Route path='/' component={Stats} exact />

@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PriceContext from '../PriceContext';
 
 import PieChart from './PieChart';
 
-const data = {
+const allocationData = {
    labels: ['GOLD', 'SILVER', 'BITCOIN'],
    datasets: [
       {
-         label: '# of Votes',
+         label: 'Portfolio Allocation',
          data: [800, 2500, 6700],
          backgroundColor: [
             'rgba(255, 99, 132, 0.7)',
@@ -26,8 +26,35 @@ const data = {
 
 const Stats = () => {
    const { priceData } = useContext(PriceContext);
+   const [latestAllocationData, setLatestAllocationData] = useState({});
 
-   console.log(priceData);
+   useEffect(() => {
+      setLatestAllocationData({
+         labels: ['GOLD', 'SILVER', 'BITCOIN'],
+         datasets: [
+            {
+               label: 'Portfolio Allocation',
+               data: [
+                  0.44 * priceData.latestPriceData.XAU,
+                  97 * priceData.latestPriceData.XAG,
+                  0.25 * priceData.latestPriceData.BTC
+               ],
+               backgroundColor: [
+                  'rgba(255, 99, 132, 0.7)',
+                  'rgba(54, 162, 235, 0.7)',
+                  '#F7931A'
+               ],
+               borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)'
+               ],
+               borderWidth: 1
+            }
+         ]
+      });
+      console.log(priceData);
+   }, [priceData]);
 
    return (
       <>
@@ -43,10 +70,10 @@ const Stats = () => {
             </ul>
          </div>
          <div>
-            <PieChart data={data} />
+            <PieChart data={allocationData} />
          </div>
          <div>
-            <PieChart data={data} />
+            <PieChart data={latestAllocationData} />
          </div>
       </>
    );

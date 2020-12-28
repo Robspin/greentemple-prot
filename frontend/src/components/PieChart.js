@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 const options = {
    legend: {
@@ -13,7 +13,7 @@ const options = {
 
 const PieChart = ({ data }) => (
    <>
-      <Pie data={data} options={options} height={200} />
+      <Doughnut data={data} options={options} height={200} />
    </>
 );
 

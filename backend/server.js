@@ -4,7 +4,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import pricesCall from './pricesTest.js';
+import pricesCall from './pricesCall.js';
 import connectDB from './config/db.js';
 import pricesRoutes from './routes/pricesRoutes.js';
 
@@ -21,7 +21,7 @@ app.use(express.json());
 const __dirname = path.resolve();
 
 cron.schedule(
-   '00 10 * * *',
+   '30 10 * * *',
    () => {
       console.log('Scheduler running...');
       pricesCall();

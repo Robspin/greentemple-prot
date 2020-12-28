@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const PriceContext = createContext(null);
+const PriceContext = createContext({});
 
 export default PriceContext;
