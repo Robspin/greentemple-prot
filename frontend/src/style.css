@@ -256,6 +256,11 @@ body {
       font-size: 1.4rem;
       letter-spacing: 2px; } }
 
+.stats__line-div {
+  max-width: 500px;
+  margin: auto;
+  padding: 16px 32px; }
+
 .blog__grid-container {
   display: grid;
   grid-gap: 0.7rem;
@@ -265,9 +270,9 @@ body {
   margin-bottom: 5px; }
 
 @media only screen and (max-width: 1100px) {
-  .stats__grid-container {
+  .blog__grid-container {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media only screen and (max-width: 600px) {
-  .stats__grid-container {
+  .blog__grid-container {
     grid-template-columns: 1fr; } }

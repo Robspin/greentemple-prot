@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import PriceContext from '../PriceContext';
 
+import { Line } from 'react-chartjs-2';
+
+import PriceContext from '../PriceContext';
 import PieChart from './PieChart';
 
 const allocationData = {
@@ -24,9 +26,27 @@ const allocationData = {
    ]
 };
 
+const lineOptions = {
+   legend: {
+      labels: {
+         fontColor: 'black'
+      }
+   },
+   scales: {
+      yAxes: [
+         {
+            ticks: {
+               beginAtZero: true
+            }
+         }
+      ]
+   }
+};
+
 const Stats = () => {
    const { priceData } = useContext(PriceContext);
    const [latestAllocationData, setLatestAllocationData] = useState({});
+   const [totalWorthData, setTotalWorthData] = useState({});
 
    useEffect(() => {
       setLatestAllocationData({
@@ -35,9 +55,9 @@ const Stats = () => {
             {
                label: 'Portfolio Allocation',
                data: [
-                  0.44 * priceData.latestPriceData.XAU,
-                  97 * priceData.latestPriceData.XAG,
-                  0.25 * priceData.latestPriceData.BTC
+                  Math.round(0.44 * priceData.latestPriceData.XAU * 100) / 100,
+                  Math.round(97 * priceData.latestPriceData.XAG * 100) / 100,
+                  Math.round(0.25 * priceData.latestPriceData.BTC * 100) / 100
                ],
                backgroundColor: [
                   'rgba(255, 99, 132, 0.7)',
@@ -50,6 +70,21 @@ const Stats = () => {
                   'rgba(255, 206, 86, 1)'
                ],
                borderWidth: 1
+            }
+         ]
+      });
+
+      setTotalWorthData({
+         labels: priceData.priceData.map(date => date.date.split(',')[0]),
+         datasets: [
+            {
+               label: 'Portfolio Change in Dollars',
+               data: priceData.priceData.map(
+                  portfolio => portfolio.portfolio - 10000
+               ),
+               fill: false,
+               backgroundColor: 'rgb(255, 99, 132)',
+               borderColor: 'rgba(255, 99, 132, 0.2)'
             }
          ]
       });
@@ -74,6 +109,9 @@ const Stats = () => {
          </div>
          <div>
             <PieChart data={latestAllocationData} />
+         </div>
+         <div className='stats__line-div'>
+            <Line data={totalWorthData} options={lineOptions} />
          </div>
       </>
    );
