@@ -266,14 +266,36 @@ body {
       letter-spacing: 2px; } }
 
 .stats__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   text-align: center;
-  padding: 40px; }
+  padding: 0 40px 0 40px; }
+  .stats__header-top {
+    padding-top: 70px; }
   .stats__header-header {
     font-size: 30px;
-    font-weight: 600; }
+    font-weight: 500;
+    margin-bottom: 70px;
+    letter-spacing: 1.5px; }
+    .stats__header-header-secondary {
+      font-size: 27px;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 2px solid rgba(121, 189, 154, 0.3);
+      border-top: 2px solid rgba(121, 189, 154, 0.3);
+      max-width: 850px;
+      margin-bottom: 0;
+      padding-bottom: 70px;
+      padding-top: 70px;
+      width: 100%; }
   .stats__header-text {
-    font-size: 20px; }
+    font-size: 20px;
+    max-width: 850px;
+    border-top: 2px solid rgba(121, 189, 154, 0.3);
+    padding-bottom: 40px;
+    padding-top: 40px; }
 
 .stats__line-div {
   max-width: 600px;
@@ -281,35 +303,54 @@ body {
   padding: 16px 32px; }
 
 .stats__container-outer {
+  padding: 40px 0;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; }
+  align-items: center; }
 
 .stats__container-inner {
-  padding: 20px;
+  padding: 40px;
   margin-right: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: auto;
   width: auto; }
+  .stats__container-inner--bottom {
+    margin-right: 0; }
+  .stats__container-inner--list {
+    list-style: none;
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 5px; }
+    .stats__container-inner--list-grey {
+      color: rgba(255, 255, 255, 0.6); }
 
 .stats__container-pie {
   max-width: 400px;
   width: 80%;
   height: 300px;
-  padding: 20px; }
+  padding: 20px;
+  padding-left: 50px; }
+
+.stats__pct {
+  color: #eb426c; }
+  .stats__pct--green {
+    color: #cff09e; }
 
 @media screen and (max-width: 1000px) {
   .stats__container-outer {
     flex-direction: column;
     text-align: center; }
   .stats__container-inner {
-    margin-right: 0; } }
+    margin-right: 0; }
+  .stats__line-div {
+    padding: 0; }
+  .stats__container-pie {
+    padding-left: 20px; } }
 
 .blog__grid-container {
   display: grid;

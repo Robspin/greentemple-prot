@@ -17,7 +17,15 @@ const App = () => {
          date: '12/28/2020, 10:00:00 AM',
          portfolio: 10000
       },
-      priceData: [{ date: '12/28/2020, 10:00:00 AM', portfolio: 10000 }]
+      priceData: [
+         {
+            date: '12/28/2020, 10:00:00 AM',
+            XAG: 0,
+            BTC: 0,
+            XAU: 0,
+            portfolio: 10000
+         }
+      ]
    });
 
    useEffect(() => {

@@ -1,14 +1,39 @@
 .stats {
    &__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       text-align: center;
-      padding: 40px;
+      padding: 0 40px 0 40px;
+
+      &-top {
+         padding-top: 70px;
+      }
       &-header {
          font-size: 30px;
-         font-weight: 600;
+         font-weight: 500;
+         margin-bottom: 70px;
+         letter-spacing: 1.5px;
+         &-secondary {
+            font-size: 27px;
+            color: rgba($color-white, 0.8);
+            border-bottom: 2px solid rgba($color-green-dark, 0.3);
+            border-top: 2px solid rgba($color-green-dark, 0.3);
+            max-width: 850px;
+            margin-bottom: 0;
+            padding-bottom: 70px;
+            padding-top: 70px;
+            width: 100%;
+         }
       }
       &-text {
          font-size: 20px;
+         max-width: 850px;
+         border-top: 2px solid rgba($color-green-dark, 0.3);
+         padding-bottom: 40px;
+         padding-top: 40px;
       }
    }
 
@@ -18,28 +43,47 @@
       padding: 16px 32px;
    }
    &__container-outer {
+      padding: 40px 0;
       width: 100%;
       height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 20px;
    }
    &__container-inner {
-      padding: 20px;
+      padding: 40px;
       margin-right: 200px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 350px;
+      height: auto;
       width: auto;
+      &--bottom {
+         margin-right: 0;
+      }
+      &--list {
+         list-style: none;
+         text-align: start;
+         font-size: 18px;
+         margin-bottom: 5px;
+         &-grey {
+            color: rgba($color-white, 0.6);
+         }
+      }
    }
    &__container-pie {
       max-width: 400px;
       width: 80%;
       height: 300px;
       padding: 20px;
+      padding-left: 50px;
+   }
+   &__pct {
+      color: $color-red-light;
+      &--green {
+         color: $color-green-light;
+      }
    }
 }
 
@@ -50,5 +94,11 @@
    }
    .stats__container-inner {
       margin-right: 0;
+   }
+   .stats__line-div {
+      padding: 0;
+   }
+   .stats__container-pie {
+      padding-left: 20px;
    }
 }
