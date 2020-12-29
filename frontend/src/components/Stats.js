@@ -27,16 +27,34 @@ const allocationData = {
 };
 
 const lineOptions = {
+   defaults: {
+      global: {
+         defaultFontColor: 'white'
+      }
+   },
    legend: {
       labels: {
-         fontColor: 'black'
+         fontColor: 'black',
+         fontFamily: 'montserrat',
+         fontStyle: 'normal'
       }
+   },
+   ticks: {
+      fontColor: 'red'
    },
    scales: {
       yAxes: [
          {
             ticks: {
-               beginAtZero: true
+               beginAtZero: true,
+               fontColor: 'black'
+            }
+         }
+      ],
+      xAxes: [
+         {
+            ticks: {
+               fontColor: 'black'
             }
          }
       ]
@@ -75,45 +93,71 @@ const Stats = () => {
       });
 
       setTotalWorthData({
-         labels: priceData.priceData.map(date => date.date.split(',')[0]),
+         labels: priceData.priceData.map(date => date.date.split('/2020')[0]),
          datasets: [
             {
                label: 'Portfolio Change in Dollars',
                data: priceData.priceData.map(
-                  portfolio => portfolio.portfolio - 10000
+                  portfolio =>
+                     Math.round((portfolio.portfolio - 10000) * 100) / 100
                ),
                fill: false,
-               backgroundColor: 'rgb(255, 99, 132)',
-               borderColor: 'rgba(255, 99, 132, 0.2)'
+               backgroundColor: '#a8dba8',
+               borderColor: '#79bd9a'
             }
          ]
       });
-      console.log(priceData);
    }, [priceData]);
 
    return (
-      <>
-         <div className='stats'>
-            <p>
+      <div className='stats'>
+         <div className='stats__header'>
+            <h2 className='stats__header-header'>10K PORTFOLIO TRACKING</h2>
+            <p className='stats__header-text'>
                We are going to track a portfolio with a worth of 10000 usd in
-               these commodities:
+               these commodities.
             </p>
-            <ul>
-               <li>2500 in silver (97oz)</li>
-               <li>800 in gold (0,44oz)</li>
-               <li>6700 in bitcoin (0.24 BTC)</li>
-            </ul>
          </div>
-         <div>
-            <PieChart data={allocationData} />
+         <div className='stats__container-outer'>
+            <div className='stats__container-inner'>
+               <p>
+                  We are going to track a portfolio with a worth of 10000 usd in
+                  these commodities:
+               </p>
+               <ul>
+                  <li>2500 in silver (97oz)</li>
+                  <li>800 in gold (0,44oz)</li>
+                  <li>6700 in bitcoin (0.24 BTC)</li>
+               </ul>
+            </div>
+            <div className='stats__container-pie'>
+               <PieChart data={allocationData} />
+            </div>
          </div>
-         <div>
-            <PieChart data={latestAllocationData} />
+         <div className='stats__container-outer'>
+            <div className='stats__container-inner'>
+               <p>
+                  We are going to track a portfolio with a worth of 10000 usd in
+                  these commodities:
+               </p>
+               <ul>
+                  <li>2500 in silver (97oz)</li>
+                  <li>800 in gold (0,44oz)</li>
+                  <li>6700 in bitcoin (0.24 BTC)</li>
+               </ul>
+            </div>
+            <div className='stats__container-pie'>
+               <PieChart data={latestAllocationData} />
+            </div>
          </div>
          <div className='stats__line-div'>
-            <Line data={totalWorthData} options={lineOptions} />
+            <Line
+               data={totalWorthData}
+               options={lineOptions}
+               defaults={{ global: { defaultFontColor: 'red' } }}
+            />
          </div>
-      </>
+      </div>
    );
 };
 

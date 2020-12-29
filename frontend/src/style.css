@@ -16,7 +16,8 @@ body {
   position: relative;
   box-sizing: border-box;
   overflow-x: hidden;
-  padding: 0; }
+  padding: 0;
+  background-color: #000; }
 
 @media screen and (max-width: 1000px) {
   body {
@@ -42,19 +43,27 @@ body {
   color: #fff; }
 
 .app-body {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: calc(100% - 20px);
   box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 1rem 0 rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(to right bottom, #3b8686, #0b486b);
-  padding: 2rem; }
+  padding: 2rem;
+  margin: 0 10px;
+  border-radius: 5px; }
 
 .chart-wrapper {
   height: 100vh; }
 
+@media screen and (max-width: 1000px) {
+  .app-body {
+    width: calc(100% - 12px);
+    margin: 0 6px; } }
+
 .navbar {
   position: absolute;
-  padding: 2rem 7rem 0 5rem;
-  width: 100%; }
+  padding: 2rem 1rem 0 1rem;
+  width: 100%;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5); }
   .navbar__box {
     font-family: 'japanese-brush';
     padding-bottom: 2rem;
@@ -196,9 +205,9 @@ body {
 @media screen and (max-width: 1000px) {
   .navbar {
     padding: 0;
-    margin: 1rem 1rem 0 1.4rem; }
+    margin: 1rem 6px 0 6px; }
     .navbar__box {
-      width: 94%;
+      width: calc(100% - 12px);
       padding-bottom: 0; }
   .flex-container {
     padding-top: 0; }
@@ -256,10 +265,51 @@ body {
       font-size: 1.4rem;
       letter-spacing: 2px; } }
 
+.stats__header {
+  width: 100%;
+  text-align: center;
+  padding: 40px; }
+  .stats__header-header {
+    font-size: 30px;
+    font-weight: 600; }
+  .stats__header-text {
+    font-size: 20px; }
+
 .stats__line-div {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   padding: 16px 32px; }
+
+.stats__container-outer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; }
+
+.stats__container-inner {
+  padding: 20px;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: auto; }
+
+.stats__container-pie {
+  max-width: 400px;
+  width: 80%;
+  height: 300px;
+  padding: 20px; }
+
+@media screen and (max-width: 1000px) {
+  .stats__container-outer {
+    flex-direction: column;
+    text-align: center; }
+  .stats__container-inner {
+    margin-right: 0; } }
 
 .blog__grid-container {
   display: grid;
