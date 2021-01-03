@@ -111,7 +111,7 @@ const Stats = () => {
       });
 
       setTotalWorthData({
-         labels: priceData.priceData.map(date => date.date.split('/2020')[0]),
+         labels: priceData.priceData.map(date => date.date.split('/2021')[0]),
          datasets: [
             {
                label: 'Portfolio Change in Dollars',
@@ -169,6 +169,8 @@ const Stats = () => {
          });
       }
    }, [currentPrices]);
+
+   console.log(priceData.priceData[priceData.priceData.length - 2].portfolio);
 
    return (
       <div className='stats'>
@@ -293,7 +295,51 @@ const Stats = () => {
             <div className='stats__container-inner stats__container-inner--bottom'>
                <ul>
                   <li className='stats__container-inner--list'>
-                     - ${`10000 total portfolio`}
+                     - $
+                     {`${priceData.latestPriceData.portfolio} Total Portfolio`}{' '}
+                     <span
+                        className={
+                           pct.BTC > 0
+                              ? 'stats__pct stats__pct--green'
+                              : 'stats__pct'
+                        }
+                     >
+                        (
+                        {(
+                           ((priceData.latestPriceData.portfolio - 10000) /
+                              10000) *
+                           100
+                        ).toFixed(2)}{' '}
+                        %)
+                     </span>
+                  </li>
+                  <li className='stats__container-inner--list'>
+                     - $
+                     {`${(
+                        priceData.latestPriceData.portfolio -
+                        priceData.priceData[priceData.priceData.length - 2]
+                           .portfolio
+                     ).toFixed(2)} Daily Change`}{' '}
+                     <span
+                        className={
+                           pct.BTC > 0
+                              ? 'stats__pct stats__pct--green'
+                              : 'stats__pct'
+                        }
+                     >
+                        (
+                        {(
+                           ((priceData.latestPriceData.portfolio -
+                              priceData.priceData[
+                                 priceData.priceData.length - 2
+                              ].portfolio) /
+                              priceData.priceData[
+                                 priceData.priceData.length - 2
+                              ].portfolio) *
+                           100
+                        ).toFixed(2)}{' '}
+                        %)
+                     </span>
                   </li>
                </ul>
             </div>
