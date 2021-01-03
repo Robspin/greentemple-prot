@@ -36,13 +36,13 @@ export default function pricesCall() {
                   XAG: Math.round((1 / fetchedMetals.rates.XAG) * 100) / 100,
                   XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100,
                   portfolio:
-                     0.44 *
+                     0.4224 *
                         (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
                            100) +
-                     97 *
+                     95.129 *
                         (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
                            100) +
-                     0.25 * (Math.round(response.data[11].price * 100) / 100)
+                     0.2296 * (Math.round(response.data[11].price * 100) / 100)
                });
 
                // @desc    Insert prices in database

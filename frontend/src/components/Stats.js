@@ -62,9 +62,9 @@ const lineOptions = {
 };
 
 const initialValues = {
-   BTC: 0.25,
-   XAG: 97,
-   XAU: 0.44
+   BTC: 0.2296,
+   XAG: 95.13,
+   XAU: 0.4224
 };
 
 const Stats = () => {
@@ -195,19 +195,19 @@ const Stats = () => {
                      <li className='stats__container-inner--list'>
                         - $2500 in silver{' '}
                         <span className='stats__container-inner--list-grey'>
-                           ({initialValues.XAG}oz)
+                           ({initialValues.XAG.toFixed(2)} oz)
                         </span>
                      </li>
                      <li className='stats__container-inner--list'>
                         - $800 in gold{' '}
                         <span className='stats__container-inner--list-grey'>
-                           ({initialValues.XAU}oz)
+                           ({initialValues.XAU.toFixed(2)} oz)
                         </span>
                      </li>
                      <li className='stats__container-inner--list'>
                         - $6700 in bitcoin{' '}
                         <span className='stats__container-inner--list-grey'>
-                           ({initialValues.BTC} BTC)
+                           ({initialValues.BTC.toFixed(2)} BTC)
                         </span>
                      </li>
                   </ul>
