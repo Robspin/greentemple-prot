@@ -296,7 +296,9 @@ const Stats = () => {
                <ul>
                   <li className='stats__container-inner--list'>
                      - $
-                     {`${priceData.latestPriceData.portfolio} Total Portfolio`}{' '}
+                     {`${priceData.latestPriceData.portfolio.toFixed(
+                        2
+                     )} Total Portfolio`}{' '}
                      <span
                         className={
                            pct.BTC > 0

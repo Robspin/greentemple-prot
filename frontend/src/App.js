@@ -24,6 +24,13 @@ const App = () => {
             BTC: 0,
             XAU: 0,
             portfolio: 10000
+         },
+         {
+            date: '12/28/2020, 10:00:00 AM',
+            XAG: 0,
+            BTC: 0,
+            XAU: 0,
+            portfolio: 10000
          }
       ]
    });
