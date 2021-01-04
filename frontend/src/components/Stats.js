@@ -184,7 +184,7 @@ const Stats = () => {
             <h2 className='stats__header-header'>10K PORTFOLIO TRACKING</h2>
             <p className='stats__header-text'>
                We are going to follow how a 10k USD portfolio performs in these
-               turbulent times.
+               turbulent inflationary times.
                <br />
                This is a high risk/high reward allocation which at the time of
                starting this project was somewhat similar as my own portfolio.

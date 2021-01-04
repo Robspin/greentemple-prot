@@ -35,14 +35,15 @@ export default function pricesCall() {
                   BTC: Math.round(response.data[11].price * 100) / 100,
                   XAG: Math.round((1 / fetchedMetals.rates.XAG) * 100) / 100,
                   XAU: Math.round((1 / fetchedMetals.rates.XAU) * 100) / 100,
-                  portfolio:
+                  portfolio: (
                      0.4224 *
-                        (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
+                        (Math.round((1 / fetchedMetals.rates.XAU) * 100) /
                            100) +
                      95.129 *
                         (Math.round((1 / fetchedMetals.rates.XAG) * 100) /
                            100) +
                      0.2296 * (Math.round(response.data[11].price * 100) / 100)
+                  ).toFixed(2)
                });
 
                // @desc    Insert prices in database
@@ -90,9 +91,6 @@ export default function pricesCall() {
       <h3>All:</h3>
       <p>${JSON.stringify(prices)}</p>
       `
-         // attachments: [
-         //    { filename: 'prices.json', path: './backend/prices.json' }
-         // ]
       };
 
       transporter.sendMail(mailOptions, (err, info) => {
@@ -103,16 +101,4 @@ export default function pricesCall() {
          }
       });
    };
-
-   // const readPrice = async () => {
-   //    return fs.readFile(
-   //       './backend/prices.json',
-   //       'utf8',
-   //       function (err, contents) {
-   //          // console.log(JSON.parse(contents));
-   //          prices = JSON.parse(contents);
-   //          sendMail();
-   //       }
-   //    );
-   // };
 }
