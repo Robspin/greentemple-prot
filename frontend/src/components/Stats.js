@@ -85,15 +85,21 @@ const Stats = () => {
             {
                label: 'Portfolio Allocation',
                data: [
-                  Math.round(
-                     initialValues.XAU * priceData.latestPriceData.XAU * 100
-                  ) / 100,
-                  Math.round(
-                     initialValues.XAG * priceData.latestPriceData.XAG * 100
-                  ) / 100,
-                  Math.round(
-                     initialValues.BTC * priceData.latestPriceData.BTC * 100
-                  ) / 100
+                  (
+                     Math.round(
+                        initialValues.XAU * priceData.latestPriceData.XAU * 100
+                     ) / 100
+                  ).toFixed(2),
+                  (
+                     Math.round(
+                        initialValues.XAG * priceData.latestPriceData.XAG * 100
+                     ) / 100
+                  ).toFixed(2),
+                  (
+                     Math.round(
+                        initialValues.BTC * priceData.latestPriceData.BTC * 100
+                     ) / 100
+                  ).toFixed(2)
                ],
                backgroundColor: [
                   'rgba(255, 99, 132, 0.7)',
@@ -298,10 +304,13 @@ const Stats = () => {
                      - $
                      {`${priceData.latestPriceData.portfolio.toFixed(
                         2
-                     )} Total Portfolio`}{' '}
+                     )} Total Worth`}{' '}
                      <span
                         className={
-                           pct.BTC > 0
+                           ((priceData.latestPriceData.portfolio - 10000) /
+                              10000) *
+                              100 >
+                           0
                               ? 'stats__pct stats__pct--green'
                               : 'stats__pct'
                         }
@@ -324,7 +333,15 @@ const Stats = () => {
                      ).toFixed(2)} Daily Change`}{' '}
                      <span
                         className={
-                           pct.BTC > 0
+                           ((priceData.latestPriceData.portfolio -
+                              priceData.priceData[
+                                 priceData.priceData.length - 2
+                              ].portfolio) /
+                              priceData.priceData[
+                                 priceData.priceData.length - 2
+                              ].portfolio) *
+                              100 >
+                           0
                               ? 'stats__pct stats__pct--green'
                               : 'stats__pct'
                         }

@@ -57,7 +57,7 @@ body {
 @media screen and (max-width: 1000px) {
   .app-body {
     width: calc(100% - 12px);
-    margin: 0 6px; } }
+    margin: 0 6px 6px 6px; } }
 
 .navbar {
   position: absolute;
@@ -346,11 +346,16 @@ body {
     flex-direction: column;
     text-align: center; }
   .stats__container-inner {
-    margin-right: 0; }
+    margin-right: 0;
+    padding: 40px 0; }
   .stats__line-div {
     padding: 0; }
   .stats__container-pie {
-    padding-left: 20px; } }
+    padding-left: 20px; }
+  .stats__header {
+    padding: 0px 20px; }
+  .stats__header-top {
+    padding-top: 70px; } }
 
 .blog__grid-container {
   display: grid;

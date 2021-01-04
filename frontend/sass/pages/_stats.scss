@@ -94,11 +94,18 @@
    }
    .stats__container-inner {
       margin-right: 0;
+      padding: 40px 0;
    }
    .stats__line-div {
       padding: 0;
    }
    .stats__container-pie {
       padding-left: 20px;
+   }
+   .stats__header {
+      padding: 0px 20px;
+   }
+   .stats__header-top {
+      padding-top: 70px;
    }
 }
