@@ -29,7 +29,8 @@ const allocationData = {
 const lineOptions = {
    defaults: {
       global: {
-         defaultFontColor: 'white'
+         defaultFontColor: 'white',
+         pointBorderColor: 'red'
       }
    },
    legend: {
@@ -38,9 +39,6 @@ const lineOptions = {
          fontFamily: 'montserrat',
          fontStyle: 'normal'
       }
-   },
-   ticks: {
-      fontColor: 'red'
    },
    scales: {
       yAxes: [
@@ -127,7 +125,8 @@ const Stats = () => {
                ),
                fill: false,
                backgroundColor: '#a8dba8',
-               borderColor: '#79bd9a'
+               borderColor: '#79bd9a',
+               pointRadius: 1
             }
          ]
       });
@@ -175,8 +174,6 @@ const Stats = () => {
          });
       }
    }, [currentPrices]);
-
-   console.log(priceData.priceData[priceData.priceData.length - 2].portfolio);
 
    return (
       <div className='stats'>
@@ -364,11 +361,7 @@ const Stats = () => {
             </div>
          </div>
          <div className='stats__line-div'>
-            <Line
-               data={totalWorthData}
-               options={lineOptions}
-               defaults={{ global: { defaultFontColor: 'red' } }}
-            />
+            <Line data={totalWorthData} options={lineOptions} />
          </div>
       </div>
    );
