@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Nav = () => {
    const [page, setPage] = useState('stats');
    const [spinning, setSpinning] = useState('home flex-container');
    const [menuBtn, setMenuBtn] = useState('menu-btn');
+
+   const location = useLocation();
+
+   useEffect(() => setPage(location.pathname.split('/')[1]), [location]);
 
    return (
       <div className='navbar'>
@@ -21,9 +25,8 @@ const Nav = () => {
                </div>
             </div>
             <div className='flex-container'>
-               <Link className='link' onClick={() => setPage('stats')} to='/'>
-                  stats{' '}
-                  <div className={page === 'stats' ? 'current' : undefined} />
+               <Link className='link' onClick={() => setPage('')} to='/'>
+                  stats <div className={page === '' ? 'current' : undefined} />
                </Link>
                <Link
                   className='link'
@@ -75,12 +78,11 @@ const Nav = () => {
                className='link-modal'
                onClick={() => {
                   setMenuBtn('menu-btn');
-                  setPage('stats');
+                  setPage('');
                }}
                to='/'
             >
-               stats{' '}
-               <div className={page === 'stats' ? 'current' : undefined} />
+               stats <div className={page === '' ? 'current' : undefined} />
             </Link>
             <Link
                className='link-modal'
