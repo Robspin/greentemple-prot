@@ -6,6 +6,7 @@ import PriceContext from './PriceContext';
 import TradingViewChart from './components/TradingViewChart';
 import Header from './components/Header';
 import Stats from './components/Stats';
+import BitcoinTest from './components/BitcoinTest';
 import Blog from './components/Blog';
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
             <Header />
             <div className='app-body'>
                <Route path='/' component={Stats} exact />
+               <Route path='/test' component={BitcoinTest} />
                <Route path='/chart' component={TradingViewChart} />
                <Route path='/blog' component={Blog} />
             </div>

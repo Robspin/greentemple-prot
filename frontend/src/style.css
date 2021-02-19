@@ -49,6 +49,7 @@ body {
   background-image: linear-gradient(to right bottom, #3b8686, #0b486b);
   padding: 2rem;
   margin: 0 10px;
+  margin-bottom: 10px;
   border-radius: 5px; }
 
 .chart-wrapper {
@@ -300,7 +301,8 @@ body {
 .stats__line-div {
   max-width: 600px;
   margin: auto;
-  padding: 16px 32px; }
+  padding: 16px 32px;
+  margin-bottom: 100px; }
 
 .stats__container-outer {
   padding: 40px 0;
@@ -349,13 +351,74 @@ body {
     margin-right: 0;
     padding: 40px 0; }
   .stats__line-div {
-    padding: 0; }
+    padding: 0;
+    margin-bottom: 50px; }
   .stats__container-pie {
     padding-left: 20px; }
   .stats__header {
     padding: 0px 20px; }
   .stats__header-top {
     padding-top: 70px; } }
+
+.bitcoin-test {
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .bitcoin-test__start-container {
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0 40px 0 40px;
+    transition: transform 1.5s ease; }
+  .bitcoin-test__title {
+    font-size: 28px;
+    border-bottom: 2px solid rgba(121, 189, 154, 0.3);
+    padding-bottom: 40px; }
+  .bitcoin-test__button {
+    margin-top: 50px;
+    background-color: #a01c3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s all; }
+    .bitcoin-test__button--margin-right {
+      margin-right: 70px; }
+    .bitcoin-test__button:hover {
+      opacity: 0.9; }
+  .bitcoin-test__questions-div {
+    position: absolute;
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0 40px 0 40px;
+    transform: translateX(400%);
+    transition: transform 1.5s ease;
+    transition-delay: 0.3s; }
+  .bitcoin-test__move-left {
+    transform: translateX(-400%); }
+  .bitcoin-test__move-middle {
+    transform: translateX(0); }
+
+@media screen and (max-width: 1000px) {
+  .bitcoin-test {
+    min-height: 45vh; } }
 
 .blog__grid-container {
   display: grid;

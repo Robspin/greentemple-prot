@@ -1,0 +1,75 @@
+.bitcoin-test {
+   min-height: 55vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   &__start-container {
+      margin: 60px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      padding: 0 40px 0 40px;
+      transition: transform 1.5s ease;
+   }
+   &__title {
+      font-size: 28px;
+      border-bottom: 2px solid rgba($color-green-dark, 0.3);
+      padding-bottom: 40px;
+   }
+   &__button {
+      margin-top: 50px;
+      background-color: $color-red-dark;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      color: $color-white;
+      padding: 10px 25px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s all;
+      &--margin-right {
+         margin-right: 70px;
+      }
+      &:hover {
+         opacity: 0.9;
+      }
+   }
+   // &__button:active {
+   //    padding: 10px 22px;
+   // }
+   &__questions-div {
+      position: absolute;
+      margin: 60px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      padding: 0 40px 0 40px;
+      transform: translateX(400%);
+      transition: transform 1.5s ease;
+      transition-delay: 0.3s;
+   }
+
+   &__move-left {
+      transform: translateX(-400%);
+   }
+   &__move-middle {
+      transform: translateX(0);
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   .bitcoin-test {
+      min-height: 45vh;
+   }
+}

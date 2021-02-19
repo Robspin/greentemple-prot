@@ -27,6 +27,14 @@ const Nav = () => {
                </Link>
                <Link
                   className='link'
+                  onClick={() => setPage('test')}
+                  to='/test'
+               >
+                  test{' '}
+                  <div className={page === 'test' ? 'current' : undefined} />
+               </Link>
+               <Link
+                  className='link'
                   onClick={() => setPage('chart')}
                   to='/chart'
                >
@@ -73,6 +81,16 @@ const Nav = () => {
             >
                stats{' '}
                <div className={page === 'stats' ? 'current' : undefined} />
+            </Link>
+            <Link
+               className='link-modal'
+               onClick={() => {
+                  setMenuBtn('menu-btn');
+                  setPage('test');
+               }}
+               to='/test'
+            >
+               test <div className={page === 'test' ? 'current' : undefined} />
             </Link>
             <Link
                className='link-modal'
