@@ -30,6 +30,14 @@ const Nav = () => {
                </Link>
                <Link
                   className='link'
+                  onClick={() => setPage('robot')}
+                  to='/robot'
+               >
+                  robot{' '}
+                  <div className={page === 'robot' ? 'current' : undefined} />
+               </Link>
+               <Link
+                  className='link'
                   onClick={() => setPage('test')}
                   to='/test'
                >
@@ -83,6 +91,17 @@ const Nav = () => {
                to='/'
             >
                stats <div className={page === '' ? 'current' : undefined} />
+            </Link>
+            <Link
+               className='link-modal'
+               onClick={() => {
+                  setMenuBtn('menu-btn');
+                  setPage('robot');
+               }}
+               to='/robot'
+            >
+               robot{' '}
+               <div className={page === 'robot' ? 'current' : undefined} />
             </Link>
             <Link
                className='link-modal'

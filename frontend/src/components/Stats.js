@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { Line } from 'react-chartjs-2';
 
-import PriceContext from '../PriceContext';
+import TempleContext from '../TempleContext';
 import PieChart from './PieChart';
 
 const allocationData = {
@@ -66,7 +66,7 @@ const initialValues = {
 };
 
 const Stats = () => {
-   const { priceData } = useContext(PriceContext);
+   const { priceData } = useContext(TempleContext);
    const [latestAllocationData, setLatestAllocationData] = useState({});
    const [totalWorthData, setTotalWorthData] = useState({});
    const [pct, setPct] = useState({ BTC: 0, XAU: 0, XAG: 0 });
