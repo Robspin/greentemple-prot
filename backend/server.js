@@ -7,6 +7,7 @@ import cors from 'cors';
 import pricesCall from './pricesCall.js';
 import connectDB from './config/db.js';
 import pricesRoutes from './routes/pricesRoutes.js';
+import tradesRoutes from './routes/tradesRoutes.js';
 
 dotenv.config();
 
@@ -45,6 +46,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/prices', pricesRoutes);
+app.use('/api/trades', tradesRoutes);
 
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 
