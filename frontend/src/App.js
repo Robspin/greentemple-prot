@@ -59,6 +59,8 @@ const App = () => {
       }
    ]);
    const [botActive, setBotActive] = useState(false);
+   const [openTrade, setOpenTrade] = useState(false);
+   const [reversedTrades, setReversedTrades] = useState(false);
 
    useEffect(() => {
       axios
@@ -73,7 +75,7 @@ const App = () => {
 
       axios
          .get('https://greentemple.io/api/trades')
-         .then(res => setTrades(res.data))
+         .then(res => setTrades(res.data.reverse()))
          .catch(err => console.log(err));
 
       axios
@@ -84,7 +86,9 @@ const App = () => {
 
    return (
       <Router>
-         <TempleContext.Provider value={{ priceData, trades, botActive }}>
+         <TempleContext.Provider
+            value={{ priceData, trades, botActive, openTrade }}
+         >
             <Header />
             <div className='app-body'>
                <Route path='/' component={Stats} exact />
