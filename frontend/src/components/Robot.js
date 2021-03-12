@@ -29,7 +29,6 @@ const Robot = () => {
    }, [trades, botActive]);
 
    useEffect(() => {
-      console.log(openTrade);
       if (openTrade.type === 'LONG') {
          setPnl(
             Math.round(

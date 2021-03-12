@@ -40,7 +40,7 @@ const App = () => {
       {
          _id: '6046e17a7fc5650ee7319297',
          date: '09/03/2021, 03:46:08',
-         type: 'LONG',
+         type: 'STOPPED OUT',
          price: 53628,
          quantity: 0.000709,
          tradingBallanceUsdt: 152.0172437794,
