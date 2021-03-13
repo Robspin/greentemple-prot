@@ -7,6 +7,7 @@ const Robot = () => {
    const [btcPrice, setBtcPrice] = useState(10000);
    const [pnl, setPnl] = useState(0);
    const [openTrade, setOpenTrade] = useState(false);
+   const [prevTrade, setPrevTrade] = useState(false);
 
    useEffect(() => {
       axios
@@ -22,8 +23,30 @@ const Robot = () => {
             price: trades[0].price,
             type: trades[0].type
          });
+         setPrevTrade({
+            date: trades[2].date,
+            exitDate: trades[1].date,
+            entry: trades[2].price,
+            exit: trades[1].price,
+            type: trades[2].type,
+            result:
+               ((trades[1].tradingBallanceBTC - trades[2].tradingBallanceBTC) /
+                  trades[1].tradingBallanceBTC) *
+               100
+         });
       } else {
          setOpenTrade(false);
+         setPrevTrade({
+            date: trades[1].date,
+            exitDate: trades[0].date,
+            entry: trades[1].price,
+            exit: trades[0].price,
+            type: trades[1].type,
+            result:
+               ((trades[0].tradingBallanceBTC - trades[1].tradingBallanceBTC) /
+                  trades[0].tradingBallanceBTC) *
+               100
+         });
       }
       // eslint-disable-next-line
    }, [trades, botActive]);
@@ -64,7 +87,7 @@ const Robot = () => {
             <div className='stats__container-outer'>
                <div className='stats__container-inner'>
                   <ul>
-                     <li className='stats__container-inner--list'>
+                     <li className='stats__container-inner--list robot__inner'>
                         - ROBOT STATUS:{' '}
                         <span
                            className={
@@ -76,7 +99,7 @@ const Robot = () => {
                      </li>
                      {openTrade && (
                         <>
-                           <li className='stats__container-inner--list'>
+                           <li className='stats__container-inner--list robot__inner'>
                               - TRADE TYPE:{' '}
                               <span
                                  className={
@@ -90,10 +113,14 @@ const Robot = () => {
                                     : ' SHORT'}
                               </span>
                            </li>
-                           <li className='stats__container-inner--list'>
-                              - ENTRY PRICE: {openTrade.price}
+                           <li className='stats__container-inner--list robot__inner'>
+                              - ENTRY DATE:{' '}
+                              <div>{openTrade.date.slice(0, 10)}</div>
                            </li>
-                           <li className='stats__container-inner--list'>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - ENTRY PRICE: <div>{openTrade.price}</div>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
                               - TRADE PNL:{' '}
                               <span
                                  className={
@@ -110,6 +137,59 @@ const Robot = () => {
                {/* <div className='stats__container-pie'>
             
                </div> */}
+            </div>
+            <div className='stats__header'>
+               <h2 className='stats__header-header stats__header-header-secondary'>
+                  Previous Trade
+               </h2>
+               <div className='stats__container-outer'>
+                  {prevTrade && (
+                     <div className='stats__container-inner'>
+                        <ul>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - TRADE TYPE:
+                              <span
+                                 className={
+                                    prevTrade.type === 'LONG'
+                                       ? 'stats__pct--green'
+                                       : 'stats__pct'
+                                 }
+                              >
+                                 {prevTrade.type === 'LONG'
+                                    ? ' LONG'
+                                    : ' SHORT'}
+                              </span>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - ENTRY DATE:{' '}
+                              <div>{prevTrade.date.slice(0, 10)}</div>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - EXIT DATE:{' '}
+                              <div>{prevTrade.exitDate.slice(0, 10)}</div>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - ENTRY PRICE: <div>{prevTrade.entry}</div>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - EXIT PRICE: <div>{prevTrade.exit}</div>
+                           </li>
+                           <li className='stats__container-inner--list robot__inner'>
+                              - TRADE PNL:{' '}
+                              <span
+                                 className={
+                                    prevTrade.result > 0
+                                       ? 'stats__pct--green'
+                                       : 'stats__pct'
+                                 }
+                              >
+                                 {Math.round(prevTrade.result * 100) / 100} %
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                  )}
+               </div>
             </div>
          </div>
       </div>

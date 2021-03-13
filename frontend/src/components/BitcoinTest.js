@@ -220,7 +220,7 @@ const BitcoinTest = () => {
             }
          >
             <div className='bitcoin-test__title'>
-               {`Your score is ${score} ${
+               {`Your score is ${score}, ${
                   score > 3 ? 'Bitcoin is for you' : 'Bitcoin is not for you'
                }`}
             </div>

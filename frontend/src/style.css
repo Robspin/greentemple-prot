@@ -160,7 +160,7 @@ body {
   display: none;
   position: fixed;
   justify-content: flex-start;
-  padding-top: 30rem;
+  padding-top: 20rem;
   align-items: center;
   flex-direction: column;
   font-family: 'japanese-brush';
@@ -436,3 +436,8 @@ body {
 @media only screen and (max-width: 600px) {
   .blog__grid-container {
     grid-template-columns: 1fr; } }
+
+.robot__inner {
+  min-width: 270px;
+  display: flex;
+  justify-content: space-between; }
