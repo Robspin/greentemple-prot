@@ -85,7 +85,7 @@ const Robot = () => {
                CURRENT STATUS
             </h2>
             <div className='stats__container-outer'>
-               <div className='stats__container-inner'>
+               <div className='stats__container-inner robot__single'>
                   <ul>
                      <li className='stats__container-inner--list robot__inner'>
                         - ROBOT STATUS:{' '}
@@ -140,11 +140,11 @@ const Robot = () => {
             </div>
             <div className='stats__header'>
                <h2 className='stats__header-header stats__header-header-secondary'>
-                  Previous Trade
+                  PREVIOUS TRADE
                </h2>
                <div className='stats__container-outer'>
                   {prevTrade && (
-                     <div className='stats__container-inner'>
+                     <div className='stats__container-inner robot__single'>
                         <ul>
                            <li className='stats__container-inner--list robot__inner'>
                               - TRADE TYPE:
@@ -175,7 +175,7 @@ const Robot = () => {
                               - EXIT PRICE: <div>{prevTrade.exit}</div>
                            </li>
                            <li className='stats__container-inner--list robot__inner'>
-                              - TRADE PNL:{' '}
+                              - TRADE RESULT:{' '}
                               <span
                                  className={
                                     prevTrade.result > 0

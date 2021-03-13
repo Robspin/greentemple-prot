@@ -441,3 +441,6 @@ body {
   min-width: 270px;
   display: flex;
   justify-content: space-between; }
+
+.robot__single {
+  margin-right: 0; }
