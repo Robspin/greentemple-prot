@@ -10,7 +10,7 @@ const GoldAndFiat = () => {
          </h2>
          <div alt='fiat' className='blog__title--image' />
          <Link className='blog__return' to='/blog'>
-            &#11176;<span className='blog__return--back'>back</span>
+            ⮨<span className='blog__return--back'>back</span>
          </Link>
       </div>
    );
