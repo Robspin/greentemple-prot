@@ -9,6 +9,7 @@ import Stats from './components/Stats';
 import BitcoinTest from './components/BitcoinTest';
 import Blog from './components/Blog';
 import Robot from './components/Robot';
+import GoldAndFiat from './blog/GoldAndFiat';
 
 const App = () => {
    const [priceData, setPriceData] = useState({
@@ -59,8 +60,6 @@ const App = () => {
       }
    ]);
    const [botActive, setBotActive] = useState(false);
-   const [openTrade, setOpenTrade] = useState(false);
-   const [reversedTrades, setReversedTrades] = useState(false);
 
    useEffect(() => {
       axios
@@ -86,16 +85,15 @@ const App = () => {
 
    return (
       <Router>
-         <TempleContext.Provider
-            value={{ priceData, trades, botActive, openTrade }}
-         >
+         <TempleContext.Provider value={{ priceData, trades, botActive }}>
             <Header />
             <div className='app-body'>
                <Route path='/' component={Stats} exact />
                <Route path='/robot' component={Robot} />
                <Route path='/test' component={BitcoinTest} />
                <Route path='/chart' component={TradingViewChart} />
-               <Route path='/blog' component={Blog} />
+               <Route path='/blog' component={Blog} exact />
+               <Route path='/blog/GoldandFiat' component={GoldAndFiat} exact />
             </div>
          </TempleContext.Provider>
       </Router>
