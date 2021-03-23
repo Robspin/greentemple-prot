@@ -13,6 +13,9 @@ const GoldAndFiat = () => {
             &#11176;
             <span className='blog__return--back'>back</span>
          </Link>
+         <Link className='blog__return blog__return--mobile' to='/blog'>
+            <span className='blog__return--back'>back</span>
+         </Link>
       </div>
    );
 };

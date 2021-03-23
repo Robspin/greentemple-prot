@@ -451,23 +451,27 @@ body {
     position: absolute;
     font-size: 60px;
     left: 50px;
-    font-family: sans-serif;
     text-decoration: none; }
     .blog__return:hover {
       cursor: pointer;
       opacity: 0.8; }
     .blog__return span {
-      font-family: 'Montserrat';
       position: absolute;
       font-size: 20px;
       top: 30px; }
+    .blog__return--mobile {
+      display: none; }
 
 @media screen and (max-width: 1000px) {
   .blog__return {
     left: 0;
-    top: -30px; }
+    top: -30px;
+    display: none; }
+    .blog__return--mobile {
+      display: block;
+      text-decoration: underline; }
     .blog__return--back {
-      display: none; } }
+      text-decoration: underline; } }
 
 .robot__inner {
   min-width: 270px;

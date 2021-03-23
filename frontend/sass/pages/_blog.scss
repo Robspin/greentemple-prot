@@ -32,17 +32,18 @@
       position: absolute;
       font-size: 60px;
       left: 50px;
-      font-family: sans-serif;
       text-decoration: none;
       &:hover {
          cursor: pointer;
          opacity: 0.8;
       }
       & span {
-         font-family: 'Montserrat';
          position: absolute;
          font-size: 20px;
          top: 30px;
+      }
+      &--mobile {
+         display: none;
       }
    }
 }
@@ -51,8 +52,13 @@
    .blog__return {
       left: 0;
       top: -30px;
+      display: none;
+      &--mobile {
+         display: block;
+         text-decoration: underline;
+      }
       &--back {
-         display: none;
+         text-decoration: underline;
       }
    }
 }
