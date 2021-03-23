@@ -451,11 +451,13 @@ body {
     position: absolute;
     font-size: 60px;
     left: 50px;
+    font-family: sans-serif;
     text-decoration: none; }
     .blog__return:hover {
       cursor: pointer;
       opacity: 0.8; }
     .blog__return span {
+      font-family: 'Montserrat';
       position: absolute;
       font-size: 20px;
       top: 30px; }

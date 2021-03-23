@@ -32,12 +32,14 @@
       position: absolute;
       font-size: 60px;
       left: 50px;
+      font-family: sans-serif;
       text-decoration: none;
       &:hover {
          cursor: pointer;
          opacity: 0.8;
       }
       & span {
+         font-family: 'Montserrat';
          position: absolute;
          font-size: 20px;
          top: 30px;
