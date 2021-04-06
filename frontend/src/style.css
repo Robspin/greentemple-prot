@@ -520,13 +520,36 @@ section .set div:nth-child(8) {
       font-size: 18px;
       letter-spacing: 0.5px;
       opacity: 0.6; }
-    .blog__title--image {
-      margin-top: 70px;
+    .blog__title--image-fiat {
+      border-radius: 8px;
+      margin: 70px 0;
       width: 320px;
       height: 480px;
-      background-image: url("./images/fiat.jpg");
+      background-image: url("./images/blog/fiat.jpg");
+      background-size: cover; }
+    .blog__title--image-claudius {
+      background-image: url("./images/blog/claudius.png");
+      width: 320px;
+      height: 320px;
+      background-size: cover; }
+    .blog__title--image-debasement {
+      background-image: url("./images/blog/decline.jpg");
+      max-width: 850px;
+      width: 100%;
+      height: 170px;
       background-size: cover;
       border-radius: 8px; }
+    .blog__title--image-nixon {
+      border-radius: 8px;
+      background-image: url("./images/blog/nixon.jpg");
+      width: 320px;
+      height: 320px;
+      background-size: cover;
+      background-position: center; }
+  .blog__text {
+    font-size: 20px;
+    max-width: 850px;
+    text-align: left; }
   .blog__return {
     position: absolute;
     font-size: 60px;
@@ -543,6 +566,8 @@ section .set div:nth-child(8) {
       display: none; }
 
 @media screen and (max-width: 1000px) {
+  .blog__text {
+    font-size: 16px; }
   .blog__return {
     left: 0;
     top: -30px;

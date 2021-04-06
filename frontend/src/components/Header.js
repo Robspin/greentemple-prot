@@ -23,19 +23,6 @@ const Header = ({ page, setPage }) => {
                <div>
                   <img src={leaf2} alt='leaf' />
                </div>
-               {/* <div>
-                  <img src={leaf3} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf4} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf1} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf2} alt='leaf' /> 
-               </div>
-                  */}
                <div>
                   <img src={leaf3} alt='leaf' />
                </div>
@@ -50,19 +37,6 @@ const Header = ({ page, setPage }) => {
                <div>
                   <img src={leaf2} alt='leaf' />
                </div>
-               {/* <div>
-                  <img src={leaf3} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf4} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf1} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf2} alt='leaf' /> 
-               </div>
-                  */}
                <div>
                   <img src={leaf3} alt='leaf' />
                </div>
@@ -77,20 +51,6 @@ const Header = ({ page, setPage }) => {
                <div>
                   <img src={leaf2} alt='leaf' />
                </div>
-               {/* 
-               <div>
-               <img src={leaf3} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf4} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf1} alt='leaf' />
-               </div>
-               <div>
-                  <img src={leaf2} alt='leaf' /> 
-               </div>
-                  */}
                <div>
                   <img src={leaf3} alt='leaf' />
                </div>

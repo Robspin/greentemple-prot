@@ -20,13 +20,42 @@
          opacity: 0.6;
       }
       &--image {
-         margin-top: 70px;
-         width: 320px;
-         height: 480px;
-         background-image: url('./images/fiat.jpg');
-         background-size: cover;
-         border-radius: 8px;
+         &-fiat {
+            border-radius: 8px;
+            margin: 70px 0;
+            width: 320px;
+            height: 480px;
+            background-image: url('./images/blog/fiat.jpg');
+            background-size: cover;
+         }
+         &-claudius {
+            background-image: url('./images/blog/claudius.png');
+            width: 320px;
+            height: 320px;
+            background-size: cover;
+         }
+         &-debasement {
+            background-image: url('./images/blog/decline.jpg');
+            max-width: 850px;
+            width: 100%;
+            height: 170px;
+            background-size: cover;
+            border-radius: 8px;
+         }
+         &-nixon {
+            border-radius: 8px;
+            background-image: url('./images/blog/nixon.jpg');
+            width: 320px;
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+         }
       }
+   }
+   &__text {
+      font-size: 20px;
+      max-width: 850px;
+      text-align: left;
    }
    &__return {
       position: absolute;
@@ -49,6 +78,11 @@
 }
 
 @media screen and (max-width: 1000px) {
+   .blog {
+      &__text {
+         font-size: 16px;
+      }
+   }
    .blog__return {
       left: 0;
       top: -30px;
