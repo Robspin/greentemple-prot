@@ -39,9 +39,9 @@ const GoldAndFiat = () => {
             <br />
             The answer is, in the beginning they did, but they ended up debasing
             their money which eventually led to hyperinflation and the collapse
-            of the Roman. <br />
-            If debasement leads to inflation, which in turn removes the peoples
-            trust in their rulers and currency, why do it?
+            of the entire empire. <br /> <br />
+            So if debasement leads to inflation, which in turn removes the
+            peoples trust in their rulers and currency, why do it?
             <br />
             <br />
             With a finite supply of gold and silver entering the empire, there
@@ -62,16 +62,16 @@ const GoldAndFiat = () => {
          <div alt='fiat' className='blog__title--image-debasement' />
          <p className='blog__text'>
             <br />
-            The debasing continued until eventually there was no valuable metal
-            left inside the coins, so their money effectively turned into a fiat
-            currency. <br />
-            Throughout this process, the politicians and upper classes hardly
-            felt the inflation, because they could still keep their own gold
-            standard.
+            The debasing continued until eventually there was no more valuable
+            metal left inside the coins, so their money effectively turned into
+            a fiat currency. <br />
+            Though throughout this process, the politicians and upper classes
+            hardly felt the effects of the inflation, because they could still
+            keep their own gold standard.
             <br />
             <br /> At a certain point however the Roman people didn’t want to
             use the Roman coins anymore. <br />
-            Government officials were finding more and more radical way to try
+            Government officials were finding more and more radical ways to try
             and enforce usage, eventually forcing businesses to use their
             currency or receive the death penalty. <br />
             This resulted in people not wanting to do business anymore, it was
@@ -79,14 +79,14 @@ const GoldAndFiat = () => {
             invasions and finally the collapse of the empire.
             <br />
             <br />
-            What lessons can be learned here? <br />
+            What lessons can be learned here? <br /> <br />
             Gold backed currencies keeps politicians accountable and government
             small, while Fiat currencies by their design incentivize deficit
             spending leading to big government and devalued savings and income
             of the citizens. <br />
             <br />
             Now let’s head back to the present, how did we end up with our
-            global fiat experiment. <br />
+            global fiat experiment. <br /> <br />
             Well like the Romans before us we started with backed money. <br />
             Shortly after world war 2 major representatives from a lot of
             countries gathered at the Breton woods conference. <br />
@@ -102,14 +102,15 @@ const GoldAndFiat = () => {
             other countries called out America’s bluff and wanted to convert
             large amounts of dollars for gold. <br /> America with economic
             pressures at the time and needing to pay for the Vietnam war was in
-            a difficult spot.
+            a difficult spot. <br />
+            They did not want to weaken their position towards other countries.
             <br />
             <br />
          </p>
          <div alt='fiat' className='blog__title--image-nixon' />
          <br />
          <p className='blog__text'>
-            So in August 15th 1971, Richard Nixon “temporarily” suspends the
+            So in August 15th 1971, Richard Nixon “temporarily” suspended the
             convertibility of the dollar into gold.
             <br /> <br />
             One of the reasons why they said it would be temporary was because
