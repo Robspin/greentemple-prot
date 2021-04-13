@@ -546,10 +546,19 @@ section .set div:nth-child(8) {
       height: 320px;
       background-size: cover;
       background-position: center; }
+    .blog__title--image-fed {
+      border-radius: 5px;
+      background-image: url("./images/blog/fed.png");
+      width: 500px;
+      height: 420px;
+      background-size: cover;
+      background-position: center; }
   .blog__text {
     font-size: 20px;
     max-width: 850px;
     text-align: left; }
+  .blog__sources {
+    font-size: 12px; }
   .blog__return {
     position: absolute;
     font-size: 60px;
@@ -568,6 +577,23 @@ section .set div:nth-child(8) {
 @media screen and (max-width: 1000px) {
   .blog__text {
     font-size: 16px; }
+  .blog__title--image-fiat {
+    width: 180px;
+    height: 280px; }
+  .blog__title--image-claudius {
+    width: 180px;
+    height: 180px; }
+  .blog__title--image-debasement {
+    max-width: 320px;
+    width: 100%;
+    height: 65px; }
+  .blog__title--image-nixon {
+    width: 180px;
+    height: 180px; }
+  .blog__title--image-fed {
+    max-width: 320px;
+    width: 100%;
+    height: 269px; }
   .blog__return {
     left: 0;
     top: -30px;
